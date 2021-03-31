@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Kitap Ekleme</title>
+
+<link th:href="@{/styles/cssandjs/main.css}" rel="stylesheet" />
+
+<link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
+</head>
+<nav class="navbar navbar-expand-lg navbar-light bg-light container">
+    <h3  class="hd" >Kitap Ekleme</h3>
+  </nav>
+<body class="bg-light">
+<div class="container">
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-5">
+            <form class="text-center border border-light p-5" action="#"
+            th:action="@{/save}" th:object="${book}" method="post">
+                <p class="h3 mb-4 text-info">Kitap Bilgilerini Buraya Giriniz</p>
+                <br>
+                 <label class="form-label">Kitap Adı</label>
+                <input type="text" class="form-control mb-4" th:field="*{name_book}" placeholder="Sefiller" required="required">
+                 <label for="exampleInputEmail1" class="form-label">Yazarı</label>
+                <input type="text" class="form-control mb-4" th:field="*{author}" placeholder="Viktor Hugo"required="required">
+                 <label for="exampleInputEmail1" class="form-label">Yayın Evi</label>
+                <input type="text" class="form-control mb-4" th:field="*{publisher}" placeholder="Zambak Yayın Evi"required="required">
+                 <label for="exampleInputEmail1" class="form-label">İSBN Numarası</label>
+                <input id="isbn" type="text" class="form-control mb-4" th:field="*{isbn}" placeholder="123-456-78-9012-3"required="required"pattern="[0-9]{13}">
+                <span class="badge">İsbn No aşağıdaki gibidir</span>
+                <br>
+                <img id="isbnimage" alt="isbnimage" th:src="@{/styles/cssandjs/isbnimage.png}" width="auto" height="75px">
+				<button id="btn-submit" class="btn btn-info btn-block my-4" type="submit">Ekle</button>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+
+<script th:src="@{/webjars/jquery/3.0.0/jquery.min.js}"></script>
+<script th:src="@{/webjars/popper.js/1.12.9-1/umd/popper.min.js}"></script>
+<script th:src="@{/webjars/bootstrap/4.0.0-2/js/bootstrap.min.js}"></script>
+
+</body>
+
+</html>

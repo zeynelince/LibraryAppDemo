@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Book Manager</title>
+
+    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
+    
+    
+</head>
+<body class="bg-light" >
+<div class="container  ">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <h3  class="hd" >Kitaplık</h3>
+  </nav>
+</div>
+
+<div  class="container mt-5 ">
+
+		<a href="addbook" class="btn btn-success mb-2 ml-4" role="button" > Kitap Ekle</a>
+
+        <div class="col">
+			        <table class="table">
+			  <thead>
+			    <tr>
+			      <th scope="col">Kitap No</th>
+			      <th scope="col">Kitap Adı</th>
+			      <th scope="col">Yazar</th>
+			      <th scope="col">Yayın Evi</th>
+			      <th scope="col">İsbn No</th>
+			      <th scope="col" >İşlemler</th>
+			    </tr>
+			  </thead>
+			  <tbody class=".table-striped">
+			    <tr th:each="book: ${listBooks}">
+			      <td th:text="${book.id_book}">Kitap No</td>
+			      <td th:text="${book.name_book}">Kitap Adı</td>
+			      <td th:text="${book.author}">@Yazar</td>
+			      <td th:text="${book.publisher}">Yayın Evi</td>
+			      <td th:text="${book.isbn}"></td>
+			      <td>
+			      <a href="#" class="btn btn-primary" role="button" >Güncelle</a>
+			      <a href="#" class="btn btn-danger" role="button" >Sil</a></td>
+			    </tr>
+			  </tbody>
+			</table>
+        </div>
+</div>
+
+<script th:src="@{/webjars/jquery/3.0.0/jquery.min.js}"></script>
+<script th:src="@{/webjars/popper.js/1.12.9-1/umd/popper.min.js}"></script>
+<script th:src="@{/webjars/bootstrap/4.0.0-2/js/bootstrap.min.js}"></script>
+
+</body>
+</html>

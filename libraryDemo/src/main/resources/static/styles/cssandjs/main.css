@@ -1,0 +1,9 @@
+@charset "UTF-8";
+ #box {
+        margin: auto;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-top: -50px;
+        margin-left: -50px;
+    }
